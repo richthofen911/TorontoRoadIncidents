@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import net.callofdroidy.torontoroadincidents.webapi.RoadRestrictionService;
+import net.callofdroidy.torontoroadincidents.webapi.ServiceGenerator;
+
 public class ActivityMain extends AppCompatActivity {
 
     @Override
@@ -26,6 +29,8 @@ public class ActivityMain extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        ServiceGenerator.createService(RoadRestrictionService.class);
     }
 
     @Override

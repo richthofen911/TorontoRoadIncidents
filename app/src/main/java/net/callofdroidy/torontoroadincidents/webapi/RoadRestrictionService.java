@@ -1,6 +1,7 @@
 package net.callofdroidy.torontoroadincidents.webapi;
 
 import retrofit2.Call;
+import retrofit2.Retrofit;
 import retrofit2.http.GET;
 
 /**
@@ -9,8 +10,12 @@ import retrofit2.http.GET;
 
 public interface RoadRestrictionService {
     @GET("/transportation/roadrestrictions/RoadRestrictionsSN.json")
-    Call<String> checkVersionNumber();
+    Call<String> getVersionNumber();
 
     @GET("/transportation/roadrestrictions/RoadRestrictions.json")
     Call<String> getRoadInfo();
+
+    public static final Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("https://www1.toronto.ca")
+            .build();
 }
